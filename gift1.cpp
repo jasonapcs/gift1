@@ -37,6 +37,8 @@ int main() {
 	
 	for (int i = 0; i < amountPeople; i++) {
 		input >> pNames[i].name;
+		pNames[i].takemoney = 0;
+		pNames[i].givemoney = 0;
 	}
 	
 	for (int i = 0; i < amountPeople; i++) {
@@ -49,8 +51,6 @@ int main() {
 
 
 		int givePeopleAmount;
-		pNames[a].takemoney = 0;
-		pNames[a].givemoney = 0;
 		input >> pNames[a].givemoney >> givePeopleAmount;
 		if (givePeopleAmount) {
 			int tempmodamount = pNames[a].givemoney % givePeopleAmount;
@@ -72,7 +72,7 @@ int main() {
 	input.close();
 
 	ofstream output;
-	output.open("gift.out");
+	output.open("gift1.out");
 
 	for (int i = 0; i < amountPeople; i++) {
 		output << pNames[i].name << " " << pNames[i].takemoney << std::endl;
